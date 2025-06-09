@@ -25,7 +25,7 @@ public class CalculatorSampleAppApplicationTests {
         options.addArguments("--remote-allow-origins=*");
 
         driver = new ChromeDriver(options);
-        driver.get("http://localhost:9090"); // Replace with your actual app URL
+        driver.get("http://localhost:8080"); // Replace with your actual app URL
     }
 
     @Test
@@ -62,4 +62,15 @@ public class CalculatorSampleAppApplicationTests {
     // public void tearDown() {
     // driver.quit();
     // }
+    @Test
+    public void failingTest() {
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://localhost:8080");
+
+        // Intentionally fail by asserting wrong title
+        String title = driver.getTitle();
+        assertEquals("ThisIsWrongTitle", title);
+
+        driver.quit();
+    }
 }
