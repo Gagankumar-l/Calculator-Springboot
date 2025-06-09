@@ -25,7 +25,7 @@ public class CalculatorSampleAppApplicationTests {
         options.addArguments("--remote-allow-origins=*");
 
         driver = new ChromeDriver(options);
-        driver.get("http://localhost:8080"); // Replace with your actual app URL
+        driver.get("http://localhost:9090"); // Replace with your actual app URL
     }
 
     @Test
